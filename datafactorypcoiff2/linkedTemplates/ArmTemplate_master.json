@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "datafactorypcoiff2"
+		},
+		"myFileSystem_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'myFileSystem'"
+		},
+		"myFileSystem_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Users\\pcoiffard\\Downloads\\Azure\\"
+		},
+		"myFileSystem_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "BETD\\pcoiffard"
+		},
+		"myDataLake_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://formationazurepcoiff.azuredatalakestore.net/webhdfs/v1"
+		},
+		"myDataLake_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "544fe47f-5772-488f-81a9-fa9de607ecfa"
+		},
+		"myDataLake_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "32ad602f-d364-45c5-ab7f-b8e199af2da0"
+		},
+		"myDataLake_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "rg-BDU_EcoleDeLaData"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "datafactorypcoiff2_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"myFileSystem_password": {
+						"value": "[parameters('myFileSystem_password')]"
+					},
+					"myDataLake_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('myDataLake_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"myDataLake_properties_typeProperties_tenant": {
+						"value": "[parameters('myDataLake_properties_typeProperties_tenant')]"
+					},
+					"myDataLake_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('myDataLake_properties_typeProperties_subscriptionId')]"
+					},
+					"myDataLake_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('myDataLake_properties_typeProperties_resourceGroupName')]"
+					},
+					"myFileSystem_properties_typeProperties_host": {
+						"value": "[parameters('myFileSystem_properties_typeProperties_host')]"
+					},
+					"myFileSystem_properties_typeProperties_userId": {
+						"value": "[parameters('myFileSystem_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
