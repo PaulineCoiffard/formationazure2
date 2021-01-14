@@ -1298,6 +1298,38 @@
 				"[concat(variables('factoryId'), '/datasets/SrcCountryResponse')]",
 				"[concat(variables('factoryId'), '/datasets/DstCountryResponse')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Triggernum1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "DataMove",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2021-01-14T16:59:00",
+						"endTime": "2021-01-14T19:41:00",
+						"timeZone": "Romance Standard Time",
+						"schedule": {}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/DataMove')]"
+			]
 		}
 	]
 }
