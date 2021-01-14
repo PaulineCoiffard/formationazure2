@@ -1,0 +1,26 @@
+{
+	"name": "ExecutePipelines",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute PipelineEurope",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Execute PipelineJohnHopkins",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
