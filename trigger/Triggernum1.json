@@ -16,7 +16,7 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2021-01-14T16:45:00",
+				"startTime": "2021-01-14T16:59:00",
 				"endTime": "2021-01-14T19:41:00",
 				"timeZone": "Romance Standard Time"
 			}
