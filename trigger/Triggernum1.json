@@ -6,7 +6,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "DataMove",
+					"referenceName": "DataMoveEurope",
 					"type": "PipelineReference"
 				}
 			}
