@@ -8,12 +8,6 @@
 		"myFileSystem_password": {
 			"value": ""
 		},
-		"myFileSystem_properties_typeProperties_host": {
-			"value": "C:\\Users\\pcoiffard\\Downloads\\Azure\\"
-		},
-		"myFileSystem_properties_typeProperties_userId": {
-			"value": "BETD\\pcoiffard"
-		},
 		"myDataLake_properties_typeProperties_dataLakeStoreUri": {
 			"value": "https://formationazurepcoiff.azuredatalakestore.net/webhdfs/v1"
 		},
@@ -25,6 +19,12 @@
 		},
 		"myDataLake_properties_typeProperties_resourceGroupName": {
 			"value": "rg-BDU_EcoleDeLaData"
+		},
+		"myFileSystem_properties_typeProperties_host": {
+			"value": "C:\\Users\\pcoiffard\\Downloads\\Azure\\"
+		},
+		"myFileSystem_properties_typeProperties_userId": {
+			"value": "BETD\\pcoiffard"
 		}
 	}
 }
